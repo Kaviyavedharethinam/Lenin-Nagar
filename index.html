@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVF Majestic Flats</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="www.svfhomes.in">
+                <h2>SVF LENIN NAGAR </h2>
+                <img src="logo.png" alt="home logo">
+            </a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#floor-plan">Floor Plan</a></li>
+                <li><a href="#video-gallery">Gallery</a></li>
+                <li><a href="#location">Location</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade-up">
+        <div>
+            <img src="images/home.jpeg" loading="lazy" alt="home-image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-text">
+                <h2>ABOUT SVF</h2>
+                <p>
+                    At Sri Vinayaga Foundation, we don’t just build houses—we create homes with care and honesty. Based
+                    in
+                    Chennai, we have 17+ years of experience, the trust of 400+ happy clients, and delivered 4 Lakhs+
+                    square
+                    feet. Our goal is to give families safe, strong, and comfortable homes that last for generations.
+                </p>
+            </div>
+            <div class="about-img">
+                <img src="about us family image.jpeg" alt="About SVF">
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights-section" id="highlights">
+        <div class="container">
+            <!-- Project Highlights -->
+            <div class="highlight-card">
+                <h2>Project Highlights</h2>
+                <ul>
+                    <li>100% Vaastu Compliant Homes</li>
+                    <li>Modern Architecture & Design</li>
+                    <li>Spacious Apartments with Natural Light</li>
+                    <li>Prime Location with Schools, Hospitals & Shopping nearby</li>
+                    <li>Premium Quality Construction with Trusted Materials</li>
+                </ul>
+            </div>
+
+            <!-- Location Highlights -->
+            <div class="highlight-card">
+                <h2>Location Highlights</h2>
+                <ul>
+                    <li>Near Rakki Cinemas</li>
+                    <li>Close to Velammal Vidhyashram CBSE School</li>
+                    <li>Excellent Connectivity to Ambattur OT & Oragadam Road</li>
+                    <li>Excellent connectivity to major residential and commercial areas.</li>
+                    <li>Clinics, pharmacies, supermarkets and essential services available around Ambattur locality.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="amenities" class="amenities-section">
+        <h2>Amenities</h2>
+        <div class="slider-wrapper">
+            <button class="slider-btn prev">&#10094;</button>
+            <div class="slider-container">
+                <div class="cards">
+                    <div class="card"><img src="lift image.jpg" alt="Modern_Elevator" loading="lazy"></div>
+                    <div class="card"><img src="security image.avif" alt="Security_Feature" loading="lazy">
+                    </div>
+                    <div class="card"><img src="cctv (1).jpg" alt="CCTV Serveillance" loading="lazy"></div>
+                    <div class="card"><img src="Standard_Parking.jpg" alt="Standard_Parking" loading="lazy">
+                    </div>
+                    <div class="card"><img src="metro water.jpeg" alt="Water_Connection_System"
+                            loading="lazy"></div>
+                    <div class="card"><img src="3phase EB.jpg" alt="Electrical_Connection"
+                            loading="lazy"></div>
+                </div>
+            </div>
+            <button class="slider-btn next">&#10095;</button>
+        </div>
+    </section>
+    <!-- Floor Plan Section -->
+    <section id="floor-plan" class="floor-plan-section">
+        <div class="container">
+            <h2>Floor Plan</h2>
+            <div class="floor-plan">
+                <img src="floor plan.jpeg" alt="Floor Plan" id="floorPlanImg" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="imgModal" class="modal">
+        <span class="close" id="closeBtn">&times;</span>
+        <div class="modal-content-wrapper">
+            <img class="modal-content" id="modalImg">
+        </div>
+    </div>
+
+    <!-- EMI Calculator Section -->
+
+<section class="emi-section">
+
+<div class="container">
+
+<h2>Home Loan EMI Calculator</h2>
+
+
+<div class="emi-box">
+
+
+<label>Flat Price (₹)</label>
+<input type="number" id="amount" value="5000000">
+
+
+<label>Down Payment (₹)</label>
+<input type="number" id="down" value="1000000">
+
+
+<label>Interest Rate (%)</label>
+<input type="number" id="rate" value="8.5">
+
+
+<label>Loan Tenure (Years)</label>
+<input type="number" id="years" value="20">
+
+
+<button onclick="calculateEMI()">
+Calculate EMI
+</button>
+
+
+<h3 id="result">
+Monthly EMI : ₹0
+</h3>
+
+
+</div>
+
+</div>
+
+</section>
+
+    <!-- Video Gallery Section -->
+    <section id="video-gallery" class="video-gallery-section">
+        <div class="container">
+            <h2>MODEL FLATS VIDEO GALLERY</h2>
+            <div class="video-gallery">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <a href="model-video1 (1).mp4" target="_blank">
+                        <img src="video-thumbnail1.png" alt="Model 1" loading="lazy">
+                    </a>
+                </div>
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <a href="model-video2 (1).mp4" target="_blank">
+                        <img src="video-thumbnail2.png" alt="Model 2" loading="lazy">
+                    </a>
+                </div>
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <a href="model-video3-1_IxSLUYMx.mp4" target="_blank">
+                        <img src="video-thumbnail3.png" alt="Model 3" loading="lazy">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="current-status">
+        <h2>Current Status</h2>
+        <div class="status-images">
+            <div class="status-img">
+                <img src="images/current-status1.jpeg" alt="Status 1" loading="lazy">
+            </div>
+            <div class="status-img">
+                <img src="images/current-status2.jpeg" alt="Status 2" loading="lazy">
+            </div>
+            <!--
+            <div class="status-img">
+                <img src="images/current-status3.jpeg" alt="Status 3" loading="lazy">
+            </div>
+            <div class="status-img">
+                <img src="images/current-status4.jpeg" alt="Status 4" loading="lazy">
+            </div>
+            -->
+        </div>
+    </section>
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <h2>LOCATION</h2>
+            <div>
+                <p>6/10/5,Lenin nagar,Venkateswara Nagar,Ambattur,chennai-600053</p>
+                <br>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3885.5135758320357!2d80.1415833!3d13.129972200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA3JzQ3LjkiTiA4MMKwMDgnMjkuNyJF!5e0!3m2!1sen!2sin!4v1758263728267!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Button -->
+    <div class="enquire-btn">Enquire Now</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Logo & About -->
+                <div class="footer-about">
+                    <img src="logo.png" alt="svf homes Logo" class="footer-logo" loading="lazy">
+                    <h3>SVF Homes</h3>
+                    <p>
+                        At SVF Homes, we understand the importance of design’s power in creating the true comfort of
+                        home.
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/16AZH16Jmx/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/svf_homes_ambattur/#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@svfhomes"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Office Info -->
+                <div class="footer-contact">
+                    <h3>Office Information</h3>
+                    <p><i class="fas fa-phone-alt"></i> 91+ 9444892265, 91+ 7358528262</p>
+                    <p><i class="fas fa-envelope"></i> svfhomes@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i>
+                        Office No. 03,<br>
+                        Munusami Koil Street,<br>
+                        Menambedu, Ambattur<br>
+                        Chennai-600 053,<br>
+                        Tamil Nadu, INDIA
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Text -->
+            <div class="footer-bottom">
+                <p>© 2025 SVF Homes Pvt Ltd | All Rights Reserved </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enquiry Popup -->
+    <div id="enquiryPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Enquire Now</h2>
+            <form action="https://formspree.io/f/mpqvwzrj" method="POST">
+
+    <input
+        type="text"
+        name="Name"
+        placeholder="Enter Name"
+        required>
+
+    <input
+        type="email"
+        name="Email"
+        placeholder="Enter Email"
+        required>
+
+    <input
+        type="tel"
+        name="Phone"
+        placeholder="Enter Phone Number"
+        required>
+
+    <textarea
+        name="Message"
+        placeholder="Your Message"></textarea>
+
+    <input
+        type="hidden"
+        name="Project"
+        value="SVF Lenin Nagar">
+
+    <input
+        type="hidden"
+        name="_subject"
+        value="New Enquiry - SVF Lenin Nagar">
+
+    <button type="submit" class="submit-btn">
+        Submit Enquiry
+    </button>
+
+</form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <img src="WhatsApp.svg.webp" alt="WhatsApp" class="whatsapp-icon" id="whatsappBtn">
+        <div class="whatsapp-popup" id="whatsappPopup">
+            <a href="https://wa.me/919444892265" target="_blank">Chat on<br> +91 9444892265</a>
+            <a href="https://wa.me/917358528262" target="_blank">Chat on<br> +91 7358528262</a>
+        </div>
+    </div>
+
+    <!-- Call Floating Button -->
+    <div class="call-float">
+        <img src="phone-icon.png" alt="Call" class="call-icon" id="callBtn">
+        <div class="call-popup" id="callPopup">
+            <a href="tel:+919444892265">Call<br> +91 9444892265</a>
+            <a href="tel:+917358528262">Call<br> +91 7358528262</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
